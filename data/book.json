@@ -1,0 +1,26 @@
+{
+  "0": {
+    "id": 0,
+    "title": "first book",
+    "price": 10,
+    "authors": "henry"
+  },
+  "1": {
+    "id": 1,
+    "title": "my book",
+    "price": 2.5,
+    "authors": "Henry Cox"
+  },
+  "2": {
+    "id": 2,
+    "title": "my book",
+    "price": 2.5,
+    "authors": "Henry Cox"
+  },
+  "4": {
+    "id": 4,
+    "title": "my book updated",
+    "price": 2.5,
+    "authors": "Henry Cox"
+  }
+}
