@@ -2,32 +2,75 @@ const { json } = require("express");
 const express = require("express");
 const app = express();
 const bodyParser = require('body-parser')
+const expressSession = require('express-session')
 app.use(bodyParser.json())
+app.use(expressSession({
+    name: "sessionCookie",
+    secret: "session secret",
+    resave: false,
+    saveUninitialized: false
+}))
+
+const Secret = require('./Secret.js')
+
+const login_data = require('data-store')( {path: process.cwd() + '/data/users.json'})
 
 
 
-const Book = require('./Book.js')
+app.post('/login', (req, res) => {
+    let user = req.body.login
+    let password = req.body.password
+    let user_data = login_data.get(user)
+    if (user_data == null) {
+        console.log("got here")
+        res.status(404).send("Not Found")
+        return
+    }
+    if (user_data.password == password) {
+        console.log("User" + user + "user credentials valid")
+        req.session.user = user
+        res.json(true)
+        return
+    }
 
+    res.status(403).send("unathorized")
 
-app.get('/book', (reg, res) => {
-    res.json(Book.getAllIDs())
+})
+
+app.get('/secret', (reg, res) => {
+    if(req.session.user == undefined) {
+        res.status(403).send("unauthorized")
+        return
+    }
+    res.json(Secret.getAllIDsForOwner(req.session.user))
     return
 })
 
-app.get('/book/:id', (req, res) => {
-    let b = Book.getBookByID(req.params.id)
+app.get('/secret/:id', (req, res) => {
+    if(req.session.user == undefined) {
+        res.status(403).send("unauthorized")
+        return
+    }
+    let b = Secret.getSecretByID(req.params.id)
     if (b == null) {
-        res.status(404).send('book not found')
-        reutrn
+        res.status(404).send('secret not found')
+        return
+    }
+    if(b.owner != req.session.user) {
+        res.status(403).send("unauthorized")
+        return
     }
     res.json(b)
 })
 
-app.post('/book', (req, res) => {
-    let {title, price, authors} = req.body;
+app.post('/secret', (req, res) => {
+    if(req.session.user == undefined) {
+        res.status(403).send("unauthorized")
+        return
+    }
 
 
-    let b = Book.create(title, price, authors)
+    let b = Secret.create(req.session.user, req.body.secret)
     if (b == null) {
         res.status(400).send('bad request')
         return
@@ -35,28 +78,49 @@ app.post('/book', (req, res) => {
     return res.json(b)
 })
 
-app.put('/book/:id', (req, res) => {
-    let b = Book.getBookByID(req.params.id)
-    if (b == null) {
-        res.status(404).send('book not found')
+app.put('/secret/:id', (req, res) => {
+    if(req.session.user == undefined) {
+        res.status(403).send("unauthorized")
         return
     }
-    let {title, price, authors} = req.body;
-    b.title = title
-    b.price = price
-    b.authors = authors
+    let b = Secret.getSecretByID(req.params.id)
+    if (b == null) {
+        res.status(404).send('secret not found')
+        return
+    }
+    if(b.owner != req.session.user) {
+        res.status(403).send("unauthorized")
+        return
+    }
+    let {secret} = req.body;
+    b.secret = secret
     b.update()
 
-    res.json(b)
+    res.json(b.id)
 })
 
-app.delete('/book/:id', (req, res) => {
-    let b = Book.getBookByID(req.params.id)
+app.delete('/secret/:id', (req, res) => {
+    if(req.session.user == undefined) {
+        res.status(403).send("unauthorized")
+        return
+    }
+    let b = Secret.getSecretByID(req.params.id)
     if (b == null) {
-        res.status(404).send('book not found')
+        res.status(404).send('secret not found')
+        return
+    }
+    if(b.owner != req.session.user) {
+        res.status(403).send("unauthorized")
         return
     }
     b.delete();
+    res.json(true)
+})
+
+
+
+app.get('/logout', (req, res) => {
+    delete req.session.user
     res.json(true)
 })
 
