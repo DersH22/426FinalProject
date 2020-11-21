@@ -1,0 +1,142 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+}
+
+.container{
+    margin: 0 auto;
+    max-width: 940px;
+    padding: 0 10px;
+}
+
+.banner {
+    background: red;
+    height: 200px;
+    padding: 10px 0px;
+    text-align: right;
+}
+
+.banner p {
+
+}
+
+.logIn {
+    color: black;
+    background: blue;
+    padding: 10px 40px;
+    text-decoration: none;
+    transition: background .5s;
+}
+
+.header {
+    background: url(https://d3i6fh83elv35t.cloudfront.net/static/2020/09/electoral-calculator-cover.png)
+    no-repeat center center;
+    background-size: cover;
+    height: 700px;
+    text-align: center;
+    margin-top: -110px;
+}
+
+.header .container {
+    position: relative;
+    top: 100px;
+}
+
+.header h1 {
+    color: black;
+    line-height: 100px;
+    font-size: 50px;
+    margin-top: 0;
+    margin-bottom: 80px;
+    text-transform: uppercase;
+}
+
+.header p {
+    color: black;
+    font-weight: 500;
+    letter-spacing: 5px;
+    margin-bottom: 40px;
+    margin-top: 0;
+    text-transform: uppercase;
+}
+
+.makeAcc {
+    color: black;
+    background: blue;
+    padding: 10px 40px;
+    text-decoration: none;
+    transition: background .5s;
+}
+
+.makeAcc:hover, .logIn:hover {
+    background: red;
+    cursor: pointer;
+    transition: background .5s;
+}
+
+.main .container {
+    margin: 80px auto;
+}
+
+.main img {
+    float: left;
+    margin: 50px 80px 50px 0;
+}
+
+.footer {
+    background: red;
+    height: 80px;
+    padding-bottom: 50px;
+}
+
+.footer p {
+    color: red;
+    font-size: 14px;
+    height: 80px;
+    line-height: 80px;
+    margin: 0;
+}
+
+@media (min-width: 850px) {
+    .header h1 {
+        font-size: 120px;
+    }
+}
+
+@media (max-width: 500px) {
+    .header h1 {
+        font-size: 50px;
+        line-height: 64px;
+    }
+
+    .main img {
+        width: 100%;
+    }
+}
+
+/*Account Setup*/
+
+.setup {
+    background: red;
+    padding: 10px 20px;
+}
+
+.fields ul {
+    height: 80px;
+    list-style: none;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.fields ul li {
+    height: 80px;
+    line-height: 80px;
+    list-style: none;
+    padding: 0 10px;
+    transition: background .5s;
+}
