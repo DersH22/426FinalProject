@@ -1,0 +1,1 @@
+//logIn html page has an a element in div.navigate class is just "Enter" currently, may need to add another
