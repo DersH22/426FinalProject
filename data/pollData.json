@@ -1,0 +1,32 @@
+{
+  "pollData": {
+    "president": {
+      "donaldTrump": 1,
+      "joeBiden": 0
+    },
+    "governor": {
+      "danForest": 0,
+      "royCooper": 0
+    },
+    "NCsenator": {
+      "thomTillis": 0,
+      "calCunningham": 0
+    },
+    "ALsenator": {
+      "tommyTuberville": 0,
+      "dougJones": 0
+    },
+    "AZsenator": {
+      "marthaMcsally": 0,
+      "markKelly": 0
+    },
+    "MEsenator": {
+      "susanCollins": 0,
+      "saraGideon": 0
+    },
+    "approval": {
+      "yes": 0,
+      "no": 0
+    }
+  }
+}
