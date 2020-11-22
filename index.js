@@ -10,7 +10,7 @@ app.use(expressSession({
     resave: false,
     saveUninitialized: false,
     cookie: {
-        secure: false
+        path: '/'
     }
 }))
 
@@ -50,7 +50,7 @@ app.post('/createUser', (req, res) => {
     let zip = req.body.zip
     let user_data = login_data.get(user)
     if (user_data != null) {
-        res.status(401).send("User Already Exists")
+        res.send("User Already Exists")
         return
     } else {
         let userData = {"password": password,
@@ -77,6 +77,7 @@ app.post('/login', (req, res) => {
     if (user_data.password == password) {
         req.session.user = user
         console.log(req.session)
+        console.log(req.session.id)
         res.json(true)
         return
     }
@@ -88,6 +89,7 @@ app.post('/login', (req, res) => {
 app.get('/userPersonalInfo', (req, res) => {
     console.log(req.session)
     console.log(req.session.user)
+    console.log(req.session.id)
     if(req.session.user == undefined) {
         res.status(403).send("unauthorized")
         return
