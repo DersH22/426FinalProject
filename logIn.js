@@ -16,6 +16,11 @@ async function handleLoginButtonPress(event) {
     } else if (response.data == "unauthorized") {
         renderIncorrectPassword()
     } else if (response.data == true) {
+        /* let sessionUser = {
+            user: username.value
+        }
+        sessionStorage.setItem("user", sessionUser);
+        let user = sessionStorage.getItem("user") */
         window.location.href = "./homePage.html"
     }
 }
@@ -37,6 +42,7 @@ async function sendLoginMessage(username, password) {
     const result = await axios({
         method: 'post',
         url: "http://localhost:3030/login",
+        withCredentials: true,
         data: {
             login: username.value,
             password: password.value

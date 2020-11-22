@@ -2,12 +2,15 @@
 
 
 async function getRepresentatives() {
-    let address = await formURL()
-    /* const result = await axios({
+    //let address = await formURL()
+    address = 'https://civicinfo.googleapis.com/civicinfo/v2/representatives?address=514%20Hillsborough%20St%20chapel%20hill%20nc%2027514&key=AIzaSyBMSC-3HHlKMug6RgB7_5bthnwm6jLfU68'
+
+
+    const result = await axios({
         method: 'get',
         url: 'https://api.nytimes.com/svc/topstories/v2/politics.json?api-key=SgAae3IpNtJtnG1f2ySeckEkczkNntW0',
       });
-    return result */
+    return result 
 }
 
 async function formURL() {
