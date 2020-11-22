@@ -194,12 +194,9 @@ red
     display: inline-block;
 }
 
-
-
 /*HOMEPAGE ELEMENTS*/
 
 .banner button {
-    
     color: white;
     background: black;
     font-size: 20px;
@@ -209,7 +206,6 @@ red
     transition: background .5s;
     margin-top: 10px;
     float: right;
-    
 }
 
 .banner button:hover {
@@ -227,33 +223,43 @@ red
 
 .homePage ul {
     list-style-type: none;
-    margin: 0;
+    margin-top: 0px;
+    margin-left: 100px;
+    margin-right: 100px;
     padding: 0;
     overflow: hidden;
 }
 
-.homePage li{
+li.tile{
     border: 5px solid black;
     background: white;
+    height: 100px;
+    position: relative;
     padding: 20px 20px;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin: 20px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tileC {
+    margin: 0;
+
 }
 
 .tile h2 {
     font-size: 20px;
     line-height: 20px;
-
 }
 
-.tile button{
-    background: black;
+.tileC button{
     color: white;
-    display: inline-block;
-    text-align: center;
-    border: none;
+    background: black;
     padding: 10px 10px;
-    transition: background .75s;
+    text-decoration: none;
+    border: none;
+    transition: background .5s;
+    margin-bottom: 10px;
 }
 
 .tile button:hover{

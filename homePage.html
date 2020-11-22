@@ -8,7 +8,7 @@
 <body>
         <script src="node_modules/jquery/dist/jquery.js"></script>
         <script src="node_modules/axios/dist/axios.js"></script>
-        <script src="renderHomePage.js"></script>
+        <script src="homePageRender.js"></script>
 
     <div class="banner">
         <div class="container">
@@ -21,25 +21,39 @@
     <div class="homePage">
         <div class="container">
                 <ul>
-                    <li>
-                        <div class="representatives tile">
+                    <li class ="representatives tile">
+                        <div class="tileC">
                         <h2>Your Representatives:</h2>
                             
                         <button class="note">Make Notes</button>
                         </div></li>
 
-                    <li>
-                        <div class="alignQuiz tile">
+                    <li class="alignQuiz tile">
+                        <div class="tileC">
                             <h2>Alignment Quiz Result:</h2>
 
                             <button class="takeQuiz">Take Alignment Quiz</button>
                         </div></li>
-                    <li>
-                        <div class="ourPoll tile">
+                    <li class="ourPoll tile">
+                        <div class="tileC">
                             <h2>Current Website Opinion:</h2>
 
                             <button class="takePoll">Take our Poll</button>
                         </div></li>
+                    <li class="newsFeed tile">
+                        <div class="tileC">
+                            <h2>News Feed:</h2>
+
+                            <ul>
+                                <li></li>
+                            </ul>
+
+                            <!--<select class="categories">
+                                <option></option>
+                            </select>-->
+
+                        </div>
+                    </li>
                 </ul>
             </div>
         </div>    
