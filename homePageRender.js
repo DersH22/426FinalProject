@@ -3,11 +3,7 @@ async function renderHomePage() {
     let newsFeed = await retrieveNewsFeed()
     renderNewsFeed(newsFeed.data.results)
     console.log(newsFeed)
-    
 }
-
-
-
 
 async function retrieveNewsFeed() {
     const result = await axios({
@@ -16,7 +12,6 @@ async function retrieveNewsFeed() {
       });
     return result
 }
-
 
 
 
