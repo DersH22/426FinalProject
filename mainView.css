@@ -21,7 +21,7 @@ red
 
 .banner {
     background: #f83036;
-    height: 50px;
+    height: 80px;
 }
 
 .header {
@@ -125,7 +125,7 @@ red
 .banner h2 {
     color: black;
     margin-top: 0px;
-    line-height: 40px;
+    line-height: 50px;
     font-size: 30px;
     text-transform: uppercase;
     margin-left: 20px;
@@ -138,16 +138,11 @@ red
     padding: 10px 0px;
 }
 
-.fields .container {
-    position: relative;
-    top: 50px;
-}
-
 .fields label{
     line-height: 20px;
 }
 
-.fields input[type=textfield] {
+.fields input[type=textfield], [type=password]  {
     width: 30%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -173,10 +168,11 @@ red
     color: white;
     background: black;
     font-size: 20px;
-    padding: 10px 30px;
+    padding: 15px 30px;
     text-decoration: none;
-    border-style: solid;
+    border: none;
     transition: background .5s;
+    margin: 10px 0px;
 }
 
 .fields button:hover {
@@ -186,18 +182,34 @@ red
     transition: background .5s;
 }
 
+/*CREATEACCOUNT ELEMENTS*/
+
+.fields select{
+    width: 30%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    display: inline-block;
+}
+
+
+
 /*HOMEPAGE ELEMENTS*/
 
 .banner button {
+    
     color: white;
     background: black;
     font-size: 20px;
     padding: 5px 20px;
     text-decoration: none;
-    border-style: solid;
+    border: none;
     transition: background .5s;
-    margin-top: 5px;
+    margin-top: 10px;
     float: right;
+    
 }
 
 .banner button:hover {
@@ -208,6 +220,43 @@ red
 }
 
 .homePage {
+    background: url(https://cdn.pixabay.com/photo/2016/05/01/21/04/memorial-day-1365982_1280.jpg) 
+    no-repeat center center;
     height: 800px;
-    
+}
+
+.homePage ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.homePage li{
+    border: 5px solid black;
+    background: white;
+    padding: 20px 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.tile h2 {
+    font-size: 20px;
+    line-height: 20px;
+
+}
+
+.tile button{
+    background: black;
+    color: white;
+    display: inline-block;
+    text-align: center;
+    border: none;
+    padding: 10px 10px;
+    transition: background .75s;
+}
+
+.tile button:hover{
+    background: white;
+    color: black;
 }
