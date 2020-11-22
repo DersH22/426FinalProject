@@ -34,7 +34,6 @@ async function sendLoginMessage(username, password) {
     const result = await axios({
         method: 'post',
         url: "http://localhost:3030/login",
-        login: username.value,
         data: {
             login: username.value,
             password: password.value

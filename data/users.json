@@ -1,7 +1,10 @@
 {
   "henry": {
-    "name": "henry cox",
-    "password": "COMP426"
+    "password": "COMP426",
+    "address": "514 Hillsborough St",
+    "city": "Chapel Hill",
+    "state": "NC",
+    "zip": "28613"
   },
   "potato": {
     "password": "COMP426"

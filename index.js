@@ -40,13 +40,21 @@ app.get('/pollResults', (req, res) => {
 app.post('/createUser', (req, res) => {
     let user = req.body.login
     let password = req.body.password
+    let address = req.body.address
+    let city = req.body.city
+    let state = req.body.state
+    let zip = req.body.zip
     let user_data = login_data.get(user)
     if (user_data != null) {
         res.status(401).send("User Already Exists")
         return
     } else {
-        let pass = {"password": password} 
-        login_data.set(user, pass)
+        let userData = {"password": password,
+                        "address": address,
+                        "city": city,
+                        "state": state,
+                        "zip": zip} 
+        login_data.set(user, userData)
         res.json(true)
         return
     }
