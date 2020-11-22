@@ -19,11 +19,17 @@ const login_data = require('data-store')( {path: process.cwd() + '/data/users.js
 
 app.post('/pollEntry', (req, res) => {
     let president = req.body.president
-    console.log(president)
+    let governor = req.body.governor
+    let NCsenator = req.body.NCsenator
+    let ALsenator = req.body.ALsenator
+    let AZsenator = req.body.AZsenator
+    let MEsenator = req.body.MEsenator
+    let approval = req.body.approval
     let data = {"president": president}
     pollData.registerVotes(data)
 
     return res.json(true)
+
 })
 
 app.get('/pollResults', (req, res) => {
