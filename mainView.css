@@ -15,7 +15,7 @@ body{
 }
 
 .banner {
-    background: red;
+    background: #f83036;
     height: 200px;
     padding: 10px 0px;
     text-align: right;
@@ -27,7 +27,7 @@ body{
 
 .logIn {
     color: black;
-    background: blue;
+    background: #2e7ef8;
     padding: 10px 40px;
     text-decoration: none;
     transition: background .5s;
@@ -67,14 +67,14 @@ body{
 
 .makeAcc {
     color: black;
-    background: blue;
+    background: #2e7ef8;
     padding: 10px 40px;
     text-decoration: none;
     transition: background .5s;
 }
 
 .makeAcc:hover, .logIn:hover {
-    background: red;
+    background: #f83036;
     cursor: pointer;
     transition: background .5s;
 }
@@ -89,13 +89,13 @@ body{
 }
 
 .footer {
-    background: red;
+    background: #f83036;
     height: 80px;
     padding-bottom: 50px;
 }
 
 .footer p {
-    color: red;
+    color: #f83036;
     font-size: 14px;
     height: 80px;
     line-height: 80px;
@@ -122,7 +122,7 @@ body{
 /*Account Setup*/
 
 .setup {
-    background: red;
+    background: #f83036;
     padding: 10px 20px;
 }
 
