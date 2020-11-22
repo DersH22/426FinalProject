@@ -14,32 +14,21 @@ body{
     padding: 0 10px;
 }
 
+/*INDEX ELEMENTS*/
+
 .banner {
     background: #f83036;
-    height: 200px;
-    padding: 10px 0px;
-    text-align: right;
-}
-
-.banner p {
-    color: black;
-}   
-
-.logIn {
-    color: black;
-    background: #2e7ef8;
-    padding: 10px 40px;
-    text-decoration: none;
-    transition: background .5s;
+    height: 50px;
 }
 
 .header {
     background: url(https://d3i6fh83elv35t.cloudfront.net/static/2020/09/electoral-calculator-cover.png)
     no-repeat center center;
     background-size: cover;
-    height: 700px;
+    height: 850px;
     text-align: center;
-    margin-top: -110px;
+    margin-top: 0px;
+    margin-bottom: -50px;
 }
 
 .header .container {
@@ -52,23 +41,32 @@ body{
     line-height: 100px;
     font-size: 50px;
     margin-top: 0;
-    margin-bottom: 80px;
+    margin-bottom: 0px;
     text-transform: uppercase;
+}
+
+.header h2{
+    color: black;
+    line-height: 70px;
+    font-size: 50px;
+    text-transform: uppercase;
+    margin-top: 0px;
+    margin-bottom: 0px;
 }
 
 .header p {
     color: black;
     font-weight: 500;
     letter-spacing: 5px;
-    margin-bottom: 40px;
-    margin-top: 0;
+    margin-top: 50px;
+    margin-bottom: 60px;
     text-transform: uppercase;
 }
 
 .makeAcc {
     color: black;
     background: #2e7ef8;
-    padding: 10px 40px;
+    padding: 20px 40px;
     text-decoration: none;
     transition: background .5s;
 }
@@ -79,27 +77,24 @@ body{
     transition: background .5s;
 }
 
-.main .container {
-    margin: 80px auto;
-}
-
-.main img {
-    float: left;
-    margin: 50px 80px 50px 0;
-}
-
 .footer {
     background: #f83036;
-    height: 80px;
-    padding-bottom: 50px;
+    height: 200px;
+    padding-bottom: 10px;
+}
+
+.footer h3 {
+    color: black;
+    font-size: 20px;
+    line-height: 10px;
+    padding: 10px 0px;
 }
 
 .footer p {
-    color: #f83036;
+    color: black;
     font-size: 14px;
-    height: 80px;
-    line-height: 80px;
-    margin: 0;
+    line-height: 20px;
+    text-align: center;
 }
 
 @media (min-width: 850px) {
@@ -119,7 +114,7 @@ body{
     }
 }
 
-/*Account Setup*/
+/*LOGIN ELEMENTS*/
 
 .setup {
     background: #f83036;
