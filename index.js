@@ -11,21 +11,34 @@ app.use(expressSession({
     saveUninitialized: false
 }))
 
-const Secret = require('./Secret.js')
+const UserData = require('./UserData.js')
 
 const login_data = require('data-store')( {path: process.cwd() + '/data/users.json'})
 
-
+app.post('/createUser', (req, res) => {
+    let user = req.body.login
+    let password = req.body.password
+    let user_data = login_data.get(user)
+    if (user_data != null) {
+        res.status(401).send("User Already Exists")
+        return
+    } else {
+        let pass = {"password": password} 
+        login_data.set(user, pass)
+        res.json(true)
+        return
+    }
+})
 
 app.post('/login', (req, res) => {
     let user = req.body.login
     let password = req.body.password
     let user_data = login_data.get(user)
     if (user_data == null) {
-        console.log("got here")
         res.status(404).send("Not Found")
         return
     }
+    
     if (user_data.password == password) {
         console.log("User" + user + "user credentials valid")
         req.session.user = user
@@ -37,21 +50,21 @@ app.post('/login', (req, res) => {
 
 })
 
-app.get('/secret', (reg, res) => {
+app.get('/userInfo', (reg, res) => {
     if(req.session.user == undefined) {
         res.status(403).send("unauthorized")
         return
     }
-    res.json(Secret.getAllIDsForOwner(req.session.user))
+    res.json(UserData.getAllIDsForOwner(req.session.user))
     return
 })
 
-app.get('/secret/:id', (req, res) => {
+app.get('/userInfo/:id', (req, res) => {
     if(req.session.user == undefined) {
         res.status(403).send("unauthorized")
         return
     }
-    let b = Secret.getSecretByID(req.params.id)
+    let b = UserData.getSecretByID(req.params.id)
     if (b == null) {
         res.status(404).send('secret not found')
         return
@@ -63,14 +76,14 @@ app.get('/secret/:id', (req, res) => {
     res.json(b)
 })
 
-app.post('/secret', (req, res) => {
+app.post('/userInfo', (req, res) => {
     if(req.session.user == undefined) {
         res.status(403).send("unauthorized")
         return
     }
 
 
-    let b = Secret.create(req.session.user, req.body.secret)
+    let b = UserData.create(req.session.user, req.body.secret)
     if (b == null) {
         res.status(400).send('bad request')
         return
@@ -78,35 +91,35 @@ app.post('/secret', (req, res) => {
     return res.json(b)
 })
 
-app.put('/secret/:id', (req, res) => {
+app.put('/userInfo/:id', (req, res) => {
     if(req.session.user == undefined) {
         res.status(403).send("unauthorized")
         return
     }
-    let b = Secret.getSecretByID(req.params.id)
+    let b = UserData.getUserDataByID(req.params.id)
     if (b == null) {
-        res.status(404).send('secret not found')
+        res.status(404).send('UserData not found')
         return
     }
     if(b.owner != req.session.user) {
         res.status(403).send("unauthorized")
         return
     }
-    let {secret} = req.body;
-    b.secret = secret
+    let info = req.body.info
+    b.info = info
     b.update()
 
     res.json(b.id)
 })
 
-app.delete('/secret/:id', (req, res) => {
+app.delete('/userInfo/:id', (req, res) => {
     if(req.session.user == undefined) {
         res.status(403).send("unauthorized")
         return
     }
-    let b = Secret.getSecretByID(req.params.id)
+    let b = UserData.getUserDataByID(req.params.id)
     if (b == null) {
-        res.status(404).send('secret not found')
+        res.status(404).send('UserData not found')
         return
     }
     if(b.owner != req.session.user) {
