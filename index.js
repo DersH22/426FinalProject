@@ -12,8 +12,24 @@ app.use(expressSession({
 }))
 
 const UserData = require('./UserData.js')
+const pollData = require('./pollData.js')
 
 const login_data = require('data-store')( {path: process.cwd() + '/data/users.json'})
+
+
+app.post('/pollEntry', (req, res) => {
+    let president = req.body.president
+    console.log(president)
+    let data = {"president": president}
+    pollData.registerVotes(data)
+
+    return res.json(true)
+})
+
+app.get('/pollResults', (req, res) => {
+    let results = pollData.getPollData()
+    res.json(results)
+})
 
 app.post('/createUser', (req, res) => {
     let user = req.body.login
@@ -64,9 +80,9 @@ app.get('/userInfo/:id', (req, res) => {
         res.status(403).send("unauthorized")
         return
     }
-    let b = UserData.getSecretByID(req.params.id)
+    let b = UserData.getUserDataByID(req.params.id)
     if (b == null) {
-        res.status(404).send('secret not found')
+        res.status(404).send('UserData not found')
         return
     }
     if(b.owner != req.session.user) {
@@ -83,7 +99,7 @@ app.post('/userInfo', (req, res) => {
     }
 
 
-    let b = UserData.create(req.session.user, req.body.secret)
+    let b = UserData.create(req.session.user, req.body.userdata)
     if (b == null) {
         res.status(400).send('bad request')
         return
