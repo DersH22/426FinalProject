@@ -56,8 +56,9 @@ app.post('/login', (req, res) => {
     let user = req.body.login
     let password = req.body.password
     let user_data = login_data.get(user)
+    console.log(user_data)
     if (user_data == null) {
-        res.status(404).send("Not Found")
+        res.send("Not Found")
         return
     }
     
@@ -68,7 +69,7 @@ app.post('/login', (req, res) => {
         return
     }
 
-    res.status(403).send("unathorized")
+    res.send("unauthorized")
 
 })
 

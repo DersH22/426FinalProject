@@ -1,6 +1,8 @@
 
 async function renderHomePage() {
-    //let newsFeed = await retrieveNewsFeed()
+    let newsFeed = await retrieveNewsFeed()
+    renderNewsFeed(newsFeed.data.results)
+    console.log(newsFeed)
     
 }
 
