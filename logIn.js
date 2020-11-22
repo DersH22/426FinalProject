@@ -21,10 +21,13 @@ async function handleLoginButtonPress(event) {
 }
 
 function renderUserNotFound() {
-
+    const $alert = $('div.alert');
+    $alert.append('<h3>User not found. Click create account to join!</h3>');
 }
 
 function renderIncorrectPassword() {
+    const $alert = $('div.alert');
+    $alert.append('<h3>Incorrect password was entered</h3>');
     
 }
 
