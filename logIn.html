@@ -7,6 +7,12 @@
 </head>
 <body>
 
+    <!-- link to logIn.js & jquery-->
+    <script src="logIn.js" type="module"></script>
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+
     <div class="banner">
         <div class="container">
             <h2>Log In</h2>
@@ -21,14 +27,17 @@
                 <li><label>Password:</label></li>
                 <li><input type="textfield" id="password" value='123Password'></li>
             </ul>
+            <!-- try changing the ul above to a FORM 
+                    i can't get the text the user types as an attribute currently...-->
+            <button class="login">Login</button>
         </div>
     </div>
 
     <div class="navigate">
         <div class="container">
-            <a class="Enter" href="./homePage.html">Log In</a>
+            <a class="Enter" id="login" href="./homePage.html">Log In</a>
             <p>Not a User?</p>
-            <a class="Enter" href="./creatAccount.html">Create Account</a>
+            <a class="Enter" id="createaccount" href="./creatAccount.html">Create Account</a>
         </div>
     </div>
 
