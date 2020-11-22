@@ -2,6 +2,11 @@
 function onLoginLoad() {
     const $body = $('.body');
     $('.body').on("click", ".Login", handleLoginButtonPress)
+    $('.body').on("click", ".createAccount", handleCreateButtonPress)
+}
+
+async function handleCreateButtonPress(event) {
+    window.location.href = "./createAccount.html"
 }
 
 
@@ -42,7 +47,7 @@ async function sendLoginMessage(username, password) {
     const result = await axios({
         method: 'post',
         url: "http://localhost:3030/login",
-        withCredentials: true,
+        //withCredentials: true,
         data: {
             login: username.value,
             password: password.value

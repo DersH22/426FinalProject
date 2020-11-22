@@ -50,7 +50,7 @@ app.post('/createUser', (req, res) => {
     let zip = req.body.zip
     let user_data = login_data.get(user)
     if (user_data != null) {
-        res.status(401).send("User Already Exists")
+        res.send("User Already Exists")
         return
     } else {
         let userData = {"password": password,

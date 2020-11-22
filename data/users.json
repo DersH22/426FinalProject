@@ -15,5 +15,12 @@
     "city": "dc",
     "state": "MD",
     "zip": "dczip"
+  },
+  "Neeva": {
+    "password": "COMP",
+    "address": "123 university way",
+    "city": "Chapel Hill",
+    "state": "FL",
+    "zip": "27514"
   }
 }
