@@ -2,14 +2,14 @@
 
 
 async function getRepresentatives() {
-    //let address = await formURL()
-    address = 'https://civicinfo.googleapis.com/civicinfo/v2/representatives?address=514%20Hillsborough%20St%20chapel%20hill%20nc%2027514&key=AIzaSyBMSC-3HHlKMug6RgB7_5bthnwm6jLfU68'
+    let address = await formURL()
 
-
+    console.log(address)
     const result = await axios({
         method: 'get',
-        url: 'https://api.nytimes.com/svc/topstories/v2/politics.json?api-key=SgAae3IpNtJtnG1f2ySeckEkczkNntW0',
+        url: address,
       });
+      console.log(result)
     return result 
 }
 
@@ -17,11 +17,13 @@ async function formURL() {
     const result = await axios({
         method: 'get',
         url: 'http://localhost:3030/userpersonalinfo',
+        withCredentials: true,
       });
-    address = result.body.address.split(" ")
-    city = result.body.city.split(" ")
-    state = result.body.state
-    zip = result.body.zip
+    console.log(result)
+    address = result.data.address.split(" ")
+    city = result.data.city.split(" ")
+    state = result.data.state
+    zip = result.data.zip
     url = "https://civicinfo.googleapis.com/civicinfo/v2/representatives?address="
     address.forEach(element => {
         url = url + element + '%20'
@@ -34,6 +36,7 @@ async function formURL() {
     key = '&key=AIzaSyBMSC-3HHlKMug6RgB7_5bthnwm6jLfU68'
     url = url + key
     console.log(url)
+    return url
 }
 
 

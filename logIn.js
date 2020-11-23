@@ -43,10 +43,11 @@ function renderIncorrectPassword() {
 
 
 async function sendLoginMessage(username, password) {
+    console.log("sending");
     const result = await axios({
         method: 'post',
         url: "http://localhost:3030/login",
-        //withCredentials: true,
+        withCredentials: true,
         data: {
             login: username.value,
             password: password.value

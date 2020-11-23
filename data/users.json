@@ -24,6 +24,10 @@
     "zip": "27514"
   },
   "Anders": {
-    "password": "password"
+    "password": "pollmaster",
+    "address": "124 University way",
+    "city": "Chapel Hill",
+    "state": "FL",
+    "zip": "27514"
   }
 }

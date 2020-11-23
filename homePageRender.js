@@ -1,7 +1,20 @@
 async function renderHomePage() {
     let newsFeed = await retrieveNewsFeed()
     renderNewsFeed(newsFeed.data.results)
+    const $body = $('.body');
+    $('.body').on("click", ".reps", handleRepButtonPress)
 }
+
+
+
+    
+
+
+function handleRepButtonPress() {
+    window.location.href = "./Representatives.html"
+}
+
+
 
 async function retrieveNewsFeed() {
     const result = await axios({

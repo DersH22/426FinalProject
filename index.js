@@ -3,15 +3,19 @@ const express = require("express");
 const app = express();
 const bodyParser = require('body-parser')
 const expressSession = require('express-session')
+const cors = require('cors')
+
+var corsOptions = {
+    origin: 'http://localhost:3000',
+    credentials: true
+  }
+app.use(cors(corsOptions))
 app.use(bodyParser.json())
 app.use(expressSession({
     name: "sessionCookie",
     secret: "session secret",
     resave: false,
     saveUninitialized: false,
-    cookie: {
-        path: '/'
-    }
 }))
 
 const UserData = require('./UserData.js')
@@ -64,7 +68,11 @@ app.post('/createUser', (req, res) => {
     }
 })
 
+app.get('/hello', (req, res) => {
+    res.json({"hello": "word"})
+});
 app.post('/login', (req, res) => {
+    console.log("here")
     let user = req.body.login
     let password = req.body.password
     let user_data = login_data.get(user)
