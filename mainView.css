@@ -134,6 +134,7 @@ red
 .fields {
     background: url(https://cdn.pixabay.com/photo/2016/05/01/21/04/memorial-day-1365982_1280.jpg) 
     no-repeat center center;
+    background-size: cover;
     height: 800px;  
     padding: 10px 0px;
 }
@@ -194,12 +195,9 @@ red
     display: inline-block;
 }
 
-
-
 /*HOMEPAGE ELEMENTS*/
 
 .banner button {
-    
     color: white;
     background: black;
     font-size: 20px;
@@ -208,8 +206,8 @@ red
     border: none;
     transition: background .5s;
     margin-top: 10px;
+    margin-bottom: 0;
     float: right;
-    
 }
 
 .banner button:hover {
@@ -222,20 +220,31 @@ red
 .homePage {
     background: url(https://cdn.pixabay.com/photo/2016/05/01/21/04/memorial-day-1365982_1280.jpg) 
     no-repeat center center;
+    background-size: cover;
     height: 800px;
+    margin-top: -20px;
+    margin-bottom: 0px;
+    text-align: center;
+}
+
+.homePage .container {
+    position: relative;
+    top: 50px;
 }
 
 .homePage ul {
     list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
+    margin-left: 150px;
+    margin-right: 150px;
 }
 
-.homePage li{
+li.tile{
     border: 5px solid black;
     background: white;
-    padding: 20px 20px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-top: 20px;
     margin-bottom: 20px;
 }
@@ -243,20 +252,42 @@ red
 .tile h2 {
     font-size: 20px;
     line-height: 20px;
-
 }
 
-.tile button{
-    background: black;
+.tileC button{
     color: white;
-    display: inline-block;
-    text-align: center;
-    border: none;
+    background: black;
     padding: 10px 10px;
-    transition: background .75s;
+    text-decoration: none;
+    border: none;
+    transition: background .5s;
+    margin-bottom: 10px;
 }
 
 .tile button:hover{
     background: white;
     color: black;
+}
+
+.newTable{
+    display: table;
+    margin: 0 auto;
+}
+
+ul.news{
+    min-width: 50px;
+    list-style: none;
+}
+
+ul.news li{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}   
+
+ul.news li h1{
+    font-size: 16px;
+    line-height: 15px;
 }

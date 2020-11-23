@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="eng">
+<head>
+    <meta charset="utf-8">
+    <title>Login</title>
+    <!-- link to stylesheet here -->
+</head>
+<body>
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/axios/dist/axios.js"></script>
+    <script src="pollingRender.js"></script>
+
+    <div id="root">
+
+        <form id="president">
+            <h4>President:</h4>
+            <input type="radio" id="donaldtrump" name="president" value="donaldtrump">
+            <label for="donaldtrump">Donald Trump</label><br>
+            <input type="radio" id="joebiden" name="president" value="joebiden">
+            <label for="joebiden">Joe Biden</label><br>
+        </form>
+    
+        <form id="governor">
+            <h4>Governor</h4>
+            <input type="radio" id="danforest" name="governor" value="danforest">
+            <label for="danforest">Dan Forest</label><br>
+            <input type="radio" id="roycooper" name="governor" value="roycooper">
+            <label for="roycooper">Roy Cooper</label><br>
+        </form>
+    
+        <form id="ncsenator">
+            <h4>NC Senator</h4>
+            <input type="radio" id="thomtillis" name="ncsenator" value="thomtillis">
+            <label for="thomtillis">Thom Tillis</label><br>
+            <input type="radio" id="calcunningham" name="ncsenator" value="calcunningham">
+            <label for="calcunningham">Cal Cunningham</label><br>
+        </form>
+    
+        <form id="alsenator">
+            <h4>AL Senator</h4>
+            <input type="radio" id="tommytuberville" name="alsenator" value="tommytuberville">
+            <label for="tommytuberville">Tommy Tuberville</label><br>
+            <input type="radio" id="dougjones" name="alsenator" value="dougjones">
+            <label for="dougjones">Doug Jones</label><br>
+        </form>
+    
+        <formiv id="azsenator">
+            <h4>AZ Senator</h4>
+            <input type="radio" id="marthamcsally" name="azsenator" value="marthamcsally">
+            <label for="marthamcsally">Martha McSally</label><br>
+            <input type="radio" id="markkelly" name="azsenator" value="markkelly">
+            <label for="markkelly">Mark Kelly</label><br>
+        </formiv>
+    
+        <form id="mesenator">
+            <h4>ME Senator</h4>
+            <input type="radio" id="susancollins" name="mesenator" value="susancollins">
+            <label for="susancollins">Susan Collins</label><br>
+            <input type="radio" id="saragideon" name="mesenator" value="saragideon">
+            <label for="saragideon">Sara Gideon</label><br>
+        </form>
+    
+        <form id="approval">
+            <h4>Presidential Approval</h4>
+            <p>Do you think Donald Trump should keep contesting the election results?</p>
+            <input type="radio" id="yes" name="approval" value="yes">
+            <label for="yes">Yes</label><br>
+            <input type="radio" id="no" name="approval" value="no">
+            <label for="no">No</label><br>
+        </form>
+
+        <button class="submitpoll">Submit Poll</button>
+
+    </div>
+
+</body>

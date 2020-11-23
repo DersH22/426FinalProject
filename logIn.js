@@ -38,7 +38,6 @@ function renderUserNotFound() {
 function renderIncorrectPassword() {
     const $alert = $('div.alert');
     $alert.append('<h3>Incorrect password was entered</h3><br><p>Remember letters are case-sensitive.</p>');
-    
 }
 
 
