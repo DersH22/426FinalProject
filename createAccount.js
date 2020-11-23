@@ -1,11 +1,8 @@
-
-
 function onCreateLoad() {
     const $body = $('.body');
     $('.body').on("click", ".createAccount", handleCreateButtonPress)
     $('.body').on("click", ".returnLogin", handleReturnButtonPress)
 }
-
 
 function handleReturnButtonPress() {
     window.location.href = "./logIn.html"
@@ -27,23 +24,17 @@ async function handleCreateButtonPress(event) {
         "city": city.value,
         "state": state.value,
         "zip": zip.value
-
     }
-
 
     let response = await sendCreateMessage(userData)
     console.log(response)
 
     if (response.data == "User Already Exists") {
-        renderUserExists()
+        renderUserExists();
     } else {
         window.location.href = "./logIn.html"
-    }
-    
-    
+    }    
 }
-
-
 
 async function sendCreateMessage(userData) {
     const result = await axios({
@@ -62,12 +53,10 @@ async function sendCreateMessage(userData) {
     return result
 }
 
-
-
-
-
-
-
+function renderUserExists() {
+    const $alert = $('div.alert');
+    $alert.append('<h3>Username already taken. Please try a different name or return to login</h3>');
+}
 
 $(function() {
     onCreateLoad();
