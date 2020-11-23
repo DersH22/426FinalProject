@@ -5,7 +5,10 @@
     <title>Login</title>
     <link href="mainView.css" type="text/css" rel="stylesheet">
 </head>
-<body>
+<body class = "body">
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+        <script src="node_modules/axios/dist/axios.js"></script>
+        <script src="logIn.js"></script>
 
     <!-- link to logIn.js & jquery-->
     <script src="logIn.js" type="module"></script>
@@ -31,15 +34,13 @@
                     i can't get the text the user types as an attribute currently...-->
             <button class="login">Login</button>
         </div>
-    </div>
-
-    <div class="navigate">
+        
         <div class="container">
-            <a class="Enter" id="login" href="./homePage.html">Log In</a>
+            <button class="Login" >Log In</button>
             <p>Not a User?</p>
-            <a class="Enter" id="createaccount" href="./creatAccount.html">Create Account</a>
+            <a class="Enter" href="./createAccount.html">Create Account</a>
         </div>
     </div>
 
-</body>
+</body> 
 </html>
