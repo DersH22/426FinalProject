@@ -22,5 +22,8 @@
     "city": "Chapel Hill",
     "state": "FL",
     "zip": "27514"
+  },
+  "Anders": {
+    "password": "password"
   }
 }
