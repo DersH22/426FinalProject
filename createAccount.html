@@ -2,33 +2,82 @@
 <html lang=eng>
     <head>
         <meta charset="utf-8">
-        <title>Login</title>
+        <title>Create Account</title>
         <link href="mainView.css" type="text/css" rel="stylesheet">
     </head>
-    <body>
-        
+    <body class="body">
+        <script src="node_modules/jquery/dist/jquery.js"></script>
+        <script src="node_modules/axios/dist/axios.js"></script>
+        <script src="createAccount.js"></script>
+
+        <div class="banner">
+            <div class="container">
+                <h2>Create Account</h2>
+            </div>
+        </div>
+
     <div class="fields">
         <div class="container">
-            <ul>
-                <li><label>Username:</label></li>
-                <li><input type ="textfield" id="username" value='user'></li>
-                <li><label>Password:</label></li>
-                <li><input type="textfield" id="password" value='password'></li>
-                <li><label>Address:</label></li>
-                <li><input type ="textfield" id="address" value='userExample'></li>
-                <li><label>State:</label></li>
-                <li><input type="textfield" id="state" value='123Password'></li>
-                <li><label>City:</label></li>
-                <li><input type ="textfield" id="city" value='userExample'></li>
-                <li><label>Zip Code:</label></li>
-                <li><input type="textfield" id="zip" value='123Password'></li>
-            </ul>
+            <div class="alert"></div>
         </div>
-    </div>
-    <div class="navigate">
         <div class="container">
-            <button class="Login" >Log In</button>
+            <h2>Enter your Information:</h2>
+            <label for="username">Username:</label>
+            <input type ="textfield" id="username" placeholder='userExample'>
+            <br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" placeholder='password'>
+            <br>
+            <label for="address">Address:</label>
+            <input type ="textfield" id="address" placeholder='208 Mockingbird Ln.'>
+            <br>
+            <label>City:</label>
+            <input type ="textfield" id="city" placeholder='Raleigh'>
+            <br>
+            <label for="state">State:</label>
+            <select id="state">
+                <option value="BV">Select a State</option>
+                <option value="AL">Alabama</option>
+                <option value="AK">Alaska</option>
+                <option value="AZ">Arizona</option>
+                <option value="AR">Arkansas</option>
+                <option value="CA">California</option>
+                <option value="CO">Colorado</option>
+                <option value="CT">Connecticut</option>
+                <option value="DE">Delaware</option>
+                <option value="FL">Florida</option>
+                <option value="GA">Georgia</option>
+                <option value="HI">Hawaii</option>
+                <option value="ID">Idaho</option>
+                <option value="IL">Illinois</option>
+                <option value="IN">Indiana</option>
+                <option value="IA">Iowa</option>
+                <option value="KS">Kansas</option>
+                <option value="KY">Kentucky</option>
+                <option value="LA">Louisiana</option><option value="ME">Maine</option><option value="MD">Maryland</option>
+                <option value="MA">Massachusetts</option><option value="MI">Michigan</option><option value="MN">Minnesota</option>
+                <option value="MS">Mississippi</option><option value="MO">Missouri</option><option value="MT">Montana</option>
+                <option value="NE">Nebraska</option><option value="NV">Nevada</option><option value="NH">New Hampshire</option>
+                <option value="NJ">New Jersey</option><option value="NM">New Mexico</option><option value="NY">New York</option>
+                <option value="FL">North Carolina</option><option value="FL">North Dakota</option><option value="FL">Ohio</option>
+                <option value="OK">Oklahoma</option><option value="OR">Oregon</option><option value="PA">Pennsylvania</option>
+                <option value="RI">Rhode Island</option><option value="SC">South Carolina</option><option value="SD">South Dakota</option>
+                <option value="TN">Tennessee</option><option value="TX">Texas</option><option value="UT">Utah</option>
+                <option value="VT">Vermont</option><option value="VA">Virginia</option><option value="WA">Washington</option>
+                <option value="WV">West Virginia</option><option value="WI">Wisconsin</option><option value="WY">Wyoming</option>
+            </select>
+            <br>
+            <label>Zip Code:</label>
+            <input type="textfield" id="zip" maxlength="5" placeholder='12345'>
+            <br>
+
+            <button class="createAccount">Create Account</button>
+            <button class="returnLogin">Return to Login</button>
         </div>
     </div>
+        <div class="footer">
+
+        </div>
+
     </body>
 </html>

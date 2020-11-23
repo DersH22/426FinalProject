@@ -21,7 +21,7 @@ red
 
 .banner {
     background: #f83036;
-    height: 50px;
+    height: 80px;
 }
 
 .header {
@@ -71,6 +71,7 @@ red
     color: white;
     background: black;
     padding: 20px 60px;
+    font-size: 20px;
     text-decoration: none;
     transition: background .5s;
 }
@@ -124,7 +125,7 @@ red
 .banner h2 {
     color: black;
     margin-top: 0px;
-    line-height: 40px;
+    line-height: 50px;
     font-size: 30px;
     text-transform: uppercase;
     margin-left: 20px;
@@ -133,24 +134,135 @@ red
 .fields {
     background: url(https://cdn.pixabay.com/photo/2016/05/01/21/04/memorial-day-1365982_1280.jpg) 
     no-repeat center center;
-    height: 800px;
-    padding: 10px 20px;  
-    margin-bottom: 30px;
+    height: 800px;  
+    padding: 10px 0px;
 }
 
-.fields ul{
-    margin-bottom: 30px;
+.fields label{
+    line-height: 20px;
 }
 
-.fields ul li{
-    list-style: none;
+.fields input[type=textfield], [type=password]  {
+    width: 30%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    display: inline-block;
+
+}
+
+.fields h3 {
+    color: #f83036;
+    margin-bottom: 0;
 }
 
 .fields p {
-    margin-top: 30px;
-    margin-bottom: 20px;
-    padding: 10px 20px;
+    margin-top: 20px;
+    margin-bottom: 0px;
+    padding: 0px 0px;
 }
 
+.fields button {
+    color: white;
+    background: black;
+    font-size: 20px;
+    padding: 15px 30px;
+    text-decoration: none;
+    border: none;
+    transition: background .5s;
+    margin: 10px 0px;
+}
 
+.fields button:hover {
+    background: white;
+    color: black;
+    cursor: pointer;
+    transition: background .5s;
+}
 
+/*CREATEACCOUNT ELEMENTS*/
+
+.fields select{
+    width: 30%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    display: inline-block;
+}
+
+/*HOMEPAGE ELEMENTS*/
+
+.banner button {
+    color: white;
+    background: black;
+    font-size: 20px;
+    padding: 5px 20px;
+    text-decoration: none;
+    border: none;
+    transition: background .5s;
+    margin-top: 10px;
+    float: right;
+}
+
+.banner button:hover {
+    background: white;
+    color: black;
+    cursor: pointer;
+    transition: background .5s;
+}
+
+.homePage {
+    background: url(https://cdn.pixabay.com/photo/2016/05/01/21/04/memorial-day-1365982_1280.jpg) 
+    no-repeat center center;
+    height: 800px;
+}
+
+.homePage ul {
+    list-style-type: none;
+    margin-top: 0px;
+    margin-left: 100px;
+    margin-right: 100px;
+    padding: 0;
+    overflow: hidden;
+}
+
+li.tile{
+    border: 5px solid black;
+    background: white;
+    height: 100px;
+    position: relative;
+    padding: 20px 20px;
+    margin: 20px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tileC {
+    margin: 0;
+
+}
+
+.tile h2 {
+    font-size: 20px;
+    line-height: 20px;
+}
+
+.tileC button{
+    color: white;
+    background: black;
+    padding: 10px 10px;
+    text-decoration: none;
+    border: none;
+    transition: background .5s;
+    margin-bottom: 10px;
+}
+
+.tile button:hover{
+    background: white;
+    color: black;
+}

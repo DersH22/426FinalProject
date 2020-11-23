@@ -8,7 +8,10 @@ app.use(expressSession({
     name: "sessionCookie",
     secret: "session secret",
     resave: false,
-    saveUninitialized: false
+    saveUninitialized: false,
+    cookie: {
+        path: '/'
+    }
 }))
 
 const UserData = require('./UserData.js')
@@ -18,14 +21,15 @@ const login_data = require('data-store')( {path: process.cwd() + '/data/users.js
 
 
 app.post('/pollEntry', (req, res) => {
-    let president = req.body.president
+    data = req.body
+    /* let president = req.body.president
     let governor = req.body.governor
     let NCsenator = req.body.NCsenator
     let ALsenator = req.body.ALsenator
     let AZsenator = req.body.AZsenator
     let MEsenator = req.body.MEsenator
     let approval = req.body.approval
-    let data = {"president": president}
+    let data = {"president": president} */
     pollData.registerVotes(data)
 
     return res.json(true)
@@ -46,7 +50,7 @@ app.post('/createUser', (req, res) => {
     let zip = req.body.zip
     let user_data = login_data.get(user)
     if (user_data != null) {
-        res.status(401).send("User Already Exists")
+        res.send("User Already Exists")
         return
     } else {
         let userData = {"password": password,
@@ -71,8 +75,9 @@ app.post('/login', (req, res) => {
     }
     
     if (user_data.password == password) {
-        console.log("User" + user + "user credentials valid")
         req.session.user = user
+        console.log(req.session)
+        console.log(req.session.id)
         res.json(true)
         return
     }
@@ -81,7 +86,19 @@ app.post('/login', (req, res) => {
 
 })
 
-app.get('/userInfo', (reg, res) => {
+app.get('/userPersonalInfo', (req, res) => {
+    console.log(req.session)
+    console.log(req.session.user)
+    console.log(req.session.id)
+    if(req.session.user == undefined) {
+        res.status(403).send("unauthorized")
+        return
+    }
+    res.json(login_data.get(req.session.user))
+    return
+})
+
+app.get('/userInfo', (req, res) => {
     if(req.session.user == undefined) {
         res.status(403).send("unauthorized")
         return
