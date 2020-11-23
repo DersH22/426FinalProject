@@ -1,11 +1,6 @@
-
 async function renderHomePage() {
     let newsFeed = await retrieveNewsFeed()
-    console.log(newsFeed)
     renderNewsFeed(newsFeed.data.results)
-    
-    
-
 }
 
 async function retrieveNewsFeed() {
@@ -19,15 +14,12 @@ async function retrieveNewsFeed() {
 }
 
 async function renderNewsFeed(results) {
-    const $news = $('#newsFeed');
-    for(let i=0; i<4; i++){
-        $news.append(
-            results[i]);
+    const $news = $('ul.news');
+    console.log(results[0]);
+    for(let i=0; i<3; i++){
+        $news.append('<li><a class="sourceLink" href="'+ results[i].short_url +'"><h1>'+ results[i].title+'</h1><img alt="News source thumbnail" src=" '+ results[i].multimedia[1].url +'"></a>');
     }
 };
-
-
-
 
 $(function() {
     renderHomePage();
